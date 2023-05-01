@@ -20,8 +20,8 @@ const Header = () => {
                             <li><Link>Contact</Link></li>
                         </ul>
                     </div>
-                    <Link>
-                    <img className=' h-10 w-25 text-white' src={logo}/>
+                    <Link to='/'>
+                        <img className=' h-10 w-25 text-white' src={logo} />
                     </Link>
                 </div>
                 <div className="form-control">
@@ -36,7 +36,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <a className="btn bg-yellow-600 text-black hover:bg-yellow-400">Login</a>
                 </div>
             </div>
             <Home></Home>
