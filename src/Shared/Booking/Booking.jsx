@@ -9,7 +9,7 @@ const Booking = () => {
     }
 
     return (
-        <div className='bg-white w-1/2 p-5 rounded'>
+        <form className='bg-white w-1/2 p-5 rounded'>
             <div className='mt-4'>
                 <label className='block text-black'>Origin</label>
                 <input className=' bg-slate-200 h-10 w-full rounded text-black p-1' type="text" />
@@ -33,7 +33,8 @@ const Booking = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            <button className='bg-yellow-600 w-full text-black py-5 rounded hover:bg-yellow-400 mt-7'>Start Booking</button>
+        </form>
     );
 };
 

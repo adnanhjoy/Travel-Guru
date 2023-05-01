@@ -20,7 +20,7 @@ const Home = () => {
                     <div className=' w-3/4'>
                         <h1 className='text-7xl'>Cox's bazar</h1>
                         <p className='my-10'>Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...</p>
-                        <button className=' bg-yellow-600 py-3 px-7 text-black rounded flex items-center'><span className='me-2'>Booking</span><FaArrowRight /></button>
+                        <button onClick={handleBooking} className=' bg-yellow-600 py-3 px-7 text-black rounded flex items-center'><span className='me-2'>Booking</span><FaArrowRight /></button>
                     </div>
                     {
                         booking ? <Booking></Booking>
