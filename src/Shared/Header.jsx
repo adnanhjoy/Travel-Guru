@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../src/assets/logo.png';
 import './Header.css';
-import Home from '../Pages/Home/Home';
+import { AuthContext } from '../context/AuthProvider';
 
 const Header = () => {
+    const {user} = useContext(AuthContext)
     return (
         <div>
             <div className="navbar bg-transparent">
@@ -35,6 +36,7 @@ const Header = () => {
                         <li><Link>Contact</Link></li>
                     </ul>
                 </div>
+                {user?.email}
                 <div className="navbar-end">
                     <Link to='/login' className="btn bg-yellow-600 text-black hover:bg-yellow-400">Login</Link>
                 </div>
