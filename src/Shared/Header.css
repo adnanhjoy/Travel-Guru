@@ -1,0 +1,6 @@
+.header-bg{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(/src/assets/images/Rectangle\ 1.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
