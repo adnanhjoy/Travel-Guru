@@ -6,7 +6,7 @@ import Home from '../Pages/Home/Home';
 
 const Header = () => {
     return (
-        <div className='header-bg'>
+        <div>
             <div className="navbar bg-transparent">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -36,10 +36,9 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-yellow-600 text-black hover:bg-yellow-400">Login</a>
+                    <Link to='/login' className="btn bg-yellow-600 text-black hover:bg-yellow-400">Login</Link>
                 </div>
             </div>
-            <Home></Home>
         </div>
     );
 };
