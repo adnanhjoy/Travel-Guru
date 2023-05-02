@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Booking = () => {
     const [date, setDate] = useState();
@@ -42,7 +43,9 @@ const Booking = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className='bg-yellow-600 w-full text-black py-5 rounded hover:bg-yellow-400 mt-7'>Start Booking</button>
+                        <Link to='/dashboard'>
+                            <button className='bg-yellow-600 w-full text-black py-5 rounded hover:bg-yellow-400 mt-7'>Start Booking</button>
+                        </Link>
                     </form>
 
                 </div>

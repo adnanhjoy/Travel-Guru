@@ -6,6 +6,8 @@ import Header from '../Shared/Header';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import Booking from '../Shared/Booking/Booking';
+import PrivateRoutes from './PrivateRoutes';
+import Dashboard from '../Pages/Dashboard/Dashboard';
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +29,10 @@ export const router = createBrowserRouter([
             {
                 path: '/booking',
                 element: <Booking></Booking>
+            },
+            {
+                path: '/dashboard',
+                element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
             }
         ]
     }
