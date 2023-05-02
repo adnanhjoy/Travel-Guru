@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googelSignIn } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
 
     const handleSubmitLogin = event => {
         event.preventDefault();
@@ -19,6 +21,14 @@ const Login = () => {
                 console.log(user);
             })
             .catch(error => console.error(error))
+    }
+
+    const handleGoogle = () => {
+        googelSignIn(googleProvider)
+        .then(result => {
+            result.user;
+        })
+        .catch(error => console.error(error))
     }
 
     return (
@@ -40,7 +50,7 @@ const Login = () => {
                     <hr className='w-1/5 border border-gray' /> or <hr className='w-1/5 border border-gray' />
                 </div>
                 <div className='flex justify-center'>
-                    <button className=' btn bg-blue-500 w-5/12 text-white py-4 rounded hover:bg-blue-600 hover:text-white mt-7 items-center'> <FaGoogle /> <span className='ms-2'>Sign in with Google</span></button>
+                    <button onClick={handleGoogle} className=' btn bg-blue-500 w-5/12 text-white py-4 rounded hover:bg-blue-600 hover:text-white mt-7 items-center'> <FaGoogle /> <span className='ms-2'>Sign in with Google</span></button>
                 </div>
             </form>
         </div>

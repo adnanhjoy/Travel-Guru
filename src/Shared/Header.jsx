@@ -5,7 +5,14 @@ import './Header.css';
 import { AuthContext } from '../context/AuthProvider';
 
 const Header = () => {
-    const {user} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+        .then(() => {})
+        .catch(error => console.error(error))
+    }
+
     return (
         <div>
             <div className="navbar bg-transparent">
@@ -38,7 +45,11 @@ const Header = () => {
                 </div>
                 {user?.email}
                 <div className="navbar-end">
-                    <Link to='/login' className="btn bg-yellow-600 text-black hover:bg-yellow-400">Login</Link>
+                    {
+                        user?.uid ?
+                            <Link onClick={handleLogOut} className="btn bg-yellow-600 text-black hover:bg-yellow-400">Log Out</Link>
+                            :
+                            <Link to='/login' className="btn bg-yellow-600 text-black hover:bg-yellow-400">Login</Link>}
                 </div>
             </div>
         </div>

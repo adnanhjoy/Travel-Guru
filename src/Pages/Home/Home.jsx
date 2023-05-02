@@ -18,8 +18,8 @@ const Home = () => {
             <div className='hero min-h-screen'>
                 <div className="hero-content flex-col lg:flex-row">
                     <div className=' w-3/4'>
-                        <h1 className='text-7xl'>Cox's bazar</h1>
-                        <p className='my-10'>Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...</p>
+                        <h1 className='text-7xl text-white'>Cox's bazar</h1>
+                        <p className='my-10 text-white'>Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...</p>
                         <button onClick={handleBooking} className=' bg-yellow-600 py-3 px-7 text-black rounded flex items-center'><span className='me-2'>Booking</span><FaArrowRight /></button>
                     </div>
                     {
