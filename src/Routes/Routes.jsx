@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
                 loader: () => {
-                    return fetch('http://localhost:5000/destination');
+                    return fetch('https://travel-guru-server-three-beta.vercel.app/destination');
                 }
             }
         ]
