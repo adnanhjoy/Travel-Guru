@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import { GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../others/Hooks/useTitle';
 
 const Login = () => {
     const { signIn, googelSignIn } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    useTitle('Login | ')
 
     const handleSubmitLogin = event => {
         event.preventDefault();

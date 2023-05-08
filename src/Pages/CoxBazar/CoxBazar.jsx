@@ -3,7 +3,6 @@ import { FaStar } from 'react-icons/fa';
 
 const CoxBazar = ({destination}) => {
     const {id, title, img, details, price, rating} = destination;
-    console.log(destination)
     return (
         <div>
             <div className='flex border p-5 rounded'>

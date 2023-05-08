@@ -4,7 +4,6 @@ import CoxBazar from '../CoxBazar/CoxBazar';
 
 const Dashboard = () => {
     const destinations = useLoaderData();
-    console.log(destinations);
     return (
         <div className='w-11/12 mx-auto'>
             <h1>Welcome to cox bazar</h1>

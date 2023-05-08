@@ -4,10 +4,11 @@ import item2 from '../../assets/images/Sreemongol.png';
 import item3 from '../../assets/images/sundorbon.png';
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import useTitle from '../../others/Hooks/useTitle';
 
 const Home = () => {
 
-
+useTitle('Home | ')
     return (
         <div className='header-bg'>
             <div className='hero min-h-screen'>

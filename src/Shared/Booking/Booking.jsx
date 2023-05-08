@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import useTitle from '../../others/Hooks/useTitle';
 
 const Booking = () => {
     const [date, setDate] = useState();
+    const [error, setError] = useState();
+    useTitle('Booking | ')
 
     const dateHandler = event => {
         setDate(event.target.value)
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const origin = form.origin.value;
+        const destination = form.destination.value;
+
+        if(origin === ""){
+            setError('Please Select the origin')
+        }
+        console.log(origin, destination)
     }
 
     return (
@@ -19,14 +34,15 @@ const Booking = () => {
                         <button className=' bg-yellow-600 py-3 px-7 text-black rounded flex items-center'><span className='me-2'>Booking</span><FaArrowRight /></button>
                     </div>
 
-                    <form className='bg-white w-1/2 p-5 rounded'>
+                    <form onSubmit={handleSubmit} className='bg-white w-1/2 p-5 rounded'>
                         <div className='mt-4'>
                             <label className='block text-black'>Origin</label>
-                            <input className=' bg-slate-200 h-10 w-full rounded text-black p-1' type="text" />
+                            <input className=' bg-slate-200 h-10 w-full rounded text-black p-1' type="text" name='origin' required/>
+                            <p>{error}</p>
                         </div>
                         <div className='mt-4'>
                             <label className='block text-black'>Destination</label>
-                            <input className=' bg-slate-200 h-10 w-full rounded text-black p-1' type="text" />
+                            <input className=' bg-slate-200 h-10 w-full rounded text-black p-1' type="text" name='destination' required/>
                         </div>
                         <div className='flex justify-between gap-3'>
                             <div className='mt-4'>
